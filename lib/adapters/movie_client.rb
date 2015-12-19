@@ -20,6 +20,8 @@ module Adapters
       end
     end
 
+    # Collects array of winners
+    # adds year from top level results because that was cleaner than in the details
     def get_winners
       json = get_json('http://oscars.yipitdata.com/')
       json.results.collect do |films_array|
@@ -42,7 +44,6 @@ module Adapters
       results=get_json(winner['Detail URL'])
       year = winner.year
       title = format_title(winner.Film)
-      # budget = format_budget(results.Budget)
       budget = BudgetServiceObject.new(results.Budget).format
       update_totals(budget) unless budget == "NO BUDGET"
       puts "#{year} - #{title} - $#{budget}"
