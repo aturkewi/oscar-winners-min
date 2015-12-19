@@ -44,7 +44,7 @@ class BudgetServiceObject
       gsub(/ *\([^)]*\) */, "").gsub("US","")
   end
 
-  def format(unformatted_budget)
+  def format
     if unformatted_budget
       budget_in_words = clear_off_extras(unformatted_budget)
       budget = convert_to_int(budget_in_words)
@@ -52,11 +52,5 @@ class BudgetServiceObject
       "NO BUDGET"
     end
   end
-
-  def update_totals(budget)
-    Movie.increase_movie_count
-    Movie.add_to_budget(budget)
-  end
-
 
 end
