@@ -45,7 +45,7 @@ module Adapters
       # budget = format_budget(results.Budget)
       budget = BudgetServiceObject.new(results.Budget).format
       update_totals(budget) unless budget == "NO BUDGET"
-      puts "#{year} - #{title} - #{budget}"
+      puts "#{year} - #{title} - $#{budget}"
     end
 
     def seed
