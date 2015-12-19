@@ -6,6 +6,6 @@ To run this project, please do the following:
 
 1. If fork and clone this repo
 2. Navigate to the directory where you forked/cloned this repo.
-3. If you don't already have bundler, please install it with `gem install bunlder`
-4. Run `bunlde install`
+3. If you don't already have bundler, please install it with `gem install bundler`
+4. Run `bundle install`
 5. Run `ruby run.rb`
